@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ public class Details extends Activity{
     TextView notice;
     TextView contact;
     ImageView secondImage;
-    Button kakaobtn,facebookbtn;
+    ImageButton kakaobtn,facebookbtn;
 
     @SuppressLint("WrongViewCast")
     public void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class Details extends Activity{
         notice = (TextView) findViewById(R.id.notice);
         contact = (TextView) findViewById(R.id.contactInformation);
         secondImage = (ImageView) findViewById(R.id.detailImage);
-        kakaobtn = (Button) findViewById(R.id.kakaoButton);
-        facebookbtn = (Button) findViewById(R.id.facebookButton);
+        kakaobtn = (ImageButton) findViewById(R.id.kakaoButton);
+        facebookbtn = (ImageButton) findViewById(R.id.facebookButton);
 
         maintitle.setText(detaildata.mainTitle);
         secondtitle.setText(detaildata.secondTitle);
