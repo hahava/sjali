@@ -8,14 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
 
 @SuppressLint("ValidFragment")
 public class OutSide extends Fragment{
     Context mContext;
     Switch outOnOff;
+
+    //Example adding
+    private ListView MenuList = null;
+    private CustomListviewAdapter ListViewAdapter = null;
 
     public OutSide(Context context){
         mContext = context;
@@ -24,6 +31,7 @@ public class OutSide extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.out_side, null);
 
+        // Switch 버튼 함수
         outOnOff = (Switch) view.findViewById(R.id.outSwitch);
         outOnOff.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
@@ -35,6 +43,18 @@ public class OutSide extends Fragment{
                 }
             }
         });
+
+        // Example adding
+        MenuList=(ListView) view.findViewById(R.id.outList);
+        ListViewAdapter = new CustomListviewAdapter(getActivity());
+        MenuList.setAdapter(ListViewAdapter);
+
+        for(int i=0;i<5;i++)
+        {
+            ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
+                    "스토리, 세대를 잇다!",
+                    "~ 2016_12_30");
+        }
 
         return view;
     }

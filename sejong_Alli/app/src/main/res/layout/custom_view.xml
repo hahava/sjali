@@ -16,14 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="5dp"
-        android:layout_marginTop="17dp">
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/customTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12pt"
+            android:textSize="11pt"
             android:text="Title"
             android:textStyle="bold"
             android:paddingBottom="3dp"/>

@@ -10,13 +10,20 @@ import android.view.ViewGroup;
 import android.content.Context;
 import android.app.Activity;
 import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
 
 @SuppressLint("ValidFragment")
 public class Group extends Fragment{
     Context mContext;
     Switch groupOnOff;
+
+    //Example adding
+    private ListView MenuList = null;
+    private CustomListviewAdapter ListViewAdapter = null;
 
     public Group(Context context){
         mContext = context;
@@ -30,12 +37,25 @@ public class Group extends Fragment{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Toast.makeText( mContext.getApplicationContext(),"Out Push On",Toast.LENGTH_SHORT).show();
+                    Toast.makeText( mContext.getApplicationContext(),"Group Push On",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText( mContext.getApplicationContext(),"Out Push Off",Toast.LENGTH_SHORT).show();
+                    Toast.makeText( mContext.getApplicationContext(),"Group Push Off",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        //Example
+        MenuList=(ListView) view.findViewById(R.id.groupList);
+        ListViewAdapter = new CustomListviewAdapter(getActivity());
+        MenuList.setAdapter(ListViewAdapter);
+
+        for(int i=0;i<5;i++)
+        {
+            ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
+                    "스토리, 세대를 잇다!",
+                    "~ 2016_12_30");
+        }
+
         return view;
     }
 }
