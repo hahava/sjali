@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli.example;
+package com.example.eeww9.sejong_alli;
 
 import android.graphics.drawable.Drawable;
 

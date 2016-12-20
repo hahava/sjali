@@ -3,6 +3,7 @@ package com.example.eeww9.sejong_alli;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -14,13 +15,16 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
+import java.util.ArrayList;
 
 @SuppressLint("ValidFragment")
 public class Group extends Fragment{
     Context mContext;
     Switch groupOnOff;
     View view;
+    ArrayList<DetailAdding> arr=new ArrayList<DetailAdding>();
+    DetailAdding di=new DetailAdding();
+    DetailParser parser;
 
     //Example adding
     private ListView MenuList = null;
@@ -50,15 +54,10 @@ public class Group extends Fragment{
         MenuList=(ListView) view.findViewById(R.id.groupList);
         ListViewAdapter = new CustomListviewAdapter(getActivity());
         MenuList.setAdapter(ListViewAdapter);
-
-        for(int i=0;i<5;i++)
-        {
-            ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
-                    "스토리, 세대를 잇다!",
-                    "~ 2016_12_30");
-        }
-
+        parser=new DetailParser();
         //floating Button
+        new JsoupAsyncTask().execute(null,null,null);
+
         FloatingActionButton ftb = (FloatingActionButton) view.findViewById(R.id.fab);
         ftb.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -68,6 +67,25 @@ public class Group extends Fragment{
             }
         });
 
+
         return view;
+
     }
+    // 제목, 원하는 인원수, 내용, 토의주제, 이름(발의자), 전공 // 소그룹 ,핸드폰 번호
+    public class JsoupAsyncTask extends AsyncTask<String, String,  ArrayList<DetailAdding>> {
+        protected void onPreExecute(String... params){
+            super.onPreExecute();
+        }
+
+        protected ArrayList<DetailAdding> doInBackground(String... params){
+
+            return parser.connectFest();
+        }
+
+        protected void onPostExecute (ArrayList<DetailAdding> result) {
+           // 리스트뷰 여기에 구현하시면 됩니다.
+        }
+    }
+
+
 }

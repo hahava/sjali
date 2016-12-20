@@ -12,8 +12,6 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
-
 @SuppressLint("ValidFragment")
 public class InSide extends Fragment{
     Context mContext;

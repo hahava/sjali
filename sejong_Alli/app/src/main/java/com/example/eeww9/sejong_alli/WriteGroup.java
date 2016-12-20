@@ -13,5 +13,7 @@ public class WriteGroup extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.write_group);
         Intent intent = getIntent();
+
+
     }
 }

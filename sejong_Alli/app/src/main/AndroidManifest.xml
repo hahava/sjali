@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eeww9.sejong_alli">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,7 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".example.Details"></activity>
+        <activity android:name=".Details"></activity>
         <activity android:name=".WriteGroup"></activity>
         <activity android:name=".Splash">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli.example;
+package com.example.eeww9.sejong_alli;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.eeww9.sejong_alli.R;
 
 public class Details extends Activity{
 

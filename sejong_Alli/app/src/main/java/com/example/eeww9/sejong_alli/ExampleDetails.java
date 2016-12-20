@@ -1,6 +1,4 @@
-package com.example.eeww9.sejong_alli.example;
-
-import android.graphics.drawable.Drawable;
+package com.example.eeww9.sejong_alli;
 
 /**
  * Created by eeww9 on 2016-12-20.
