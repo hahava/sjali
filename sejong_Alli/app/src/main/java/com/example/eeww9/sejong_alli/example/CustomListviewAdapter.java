@@ -1,7 +1,9 @@
 package com.example.eeww9.sejong_alli.example;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,6 +86,16 @@ public class CustomListviewAdapter extends BaseAdapter{
 
         cusData.CusTitle.setText(allMenuData.cusTitle);
         cusData.CusDate.setText(allMenuData.cusDate);
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(allMenuContext,Details.class);
+                allMenuContext.startActivity(intent);
+            }
+        });
+
+
 
         return convertView;
     }

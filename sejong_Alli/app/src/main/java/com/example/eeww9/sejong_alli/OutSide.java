@@ -49,7 +49,7 @@ public class OutSide extends Fragment{
         ListViewAdapter = new CustomListviewAdapter(getActivity());
         MenuList.setAdapter(ListViewAdapter);
 
-        for(int i=0;i<5;i++)
+        for(int i=0;i<10;i++)
         {
             ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
                     "스토리, 세대를 잇다!",
