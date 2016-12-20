@@ -20,7 +20,7 @@ import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
 public class Group extends Fragment{
     Context mContext;
     Switch groupOnOff;
-
+    View view;
 
     //Example adding
     private ListView MenuList = null;
@@ -31,7 +31,8 @@ public class Group extends Fragment{
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.group, null);
+        if(view==null)
+        view = inflater.inflate(R.layout.group, null);
 
         groupOnOff = (Switch) view.findViewById(R.id.groupSwitch);
         groupOnOff.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {

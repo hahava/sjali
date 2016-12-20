@@ -18,7 +18,7 @@ import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
 public class InSide extends Fragment{
     Context mContext;
     Switch inOnOff;
-
+    View view;
     //Example adding
     private ListView MenuList = null;
     private CustomListviewAdapter ListViewAdapter = null;
@@ -28,7 +28,8 @@ public class InSide extends Fragment{
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.in_side, null);
+       if(view==null)
+        view = inflater.inflate(R.layout.in_side, null);
 
         inOnOff = (Switch) view.findViewById(R.id.inSwitch);
         inOnOff.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
