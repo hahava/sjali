@@ -7,19 +7,35 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 @SuppressLint("ValidFragment")
 public class OutSide extends Fragment{
     Context mContext;
+    Switch outOnOff;
 
     public OutSide(Context context){
         mContext = context;
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.out_side, null);
+
+        outOnOff = (Switch) view.findViewById(R.id.outSwitch);
+        outOnOff.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast.makeText( mContext.getApplicationContext(),"Out Push On",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText( mContext.getApplicationContext(),"Out Push Off",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         return view;
     }
 
