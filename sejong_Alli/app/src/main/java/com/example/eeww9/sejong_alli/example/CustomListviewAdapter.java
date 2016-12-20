@@ -20,6 +20,7 @@ public class CustomListviewAdapter extends BaseAdapter{
 
     private Context allMenuContext = null;
     private ArrayList<CustomItem> allMenuListData = new ArrayList<CustomItem>();
+    CustomItem addInfo;
 
     public CustomListviewAdapter(Context allMenuContext){
         super();
@@ -41,7 +42,7 @@ public class CustomListviewAdapter extends BaseAdapter{
     }
 
     public void addItem(Drawable cusimage, String custitle, String cusdate){
-        CustomItem addInfo = new CustomItem();
+        addInfo = new CustomItem();
         addInfo.cusImage = cusimage;
         addInfo.cusTitle = custitle;
         addInfo.cusDate = cusdate;
@@ -55,7 +56,7 @@ public class CustomListviewAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
        ViewHolder cusData;
         if(convertView == null){
             cusData = new ViewHolder();
@@ -91,6 +92,7 @@ public class CustomListviewAdapter extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(allMenuContext,Details.class);
+                intent.putExtra("number", position);
                 allMenuContext.startActivity(intent);
             }
         });

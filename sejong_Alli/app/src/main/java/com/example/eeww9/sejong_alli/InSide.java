@@ -48,12 +48,10 @@ public class InSide extends Fragment{
         ListViewAdapter = new CustomListviewAdapter(getActivity());
         MenuList.setAdapter(ListViewAdapter);
 
-        for(int i=0;i<5;i++)
-        {
-            ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
-                    "스토리, 세대를 잇다!",
-                    "~ 2016_12_30");
-        }
+        ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
+                   "스토리, 세대를 잇다!",
+                   "~ 2016_12_30");
+
 
         return view;
     }

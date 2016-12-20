@@ -31,7 +31,9 @@ public class Details extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_info);
         Intent intent = getIntent();
-        final ExampleDetails detaildata = new ExampleDetails();
+        int position;
+        position = intent.getExtras().getInt("number");
+        final ExampleDetails detaildata = new ExampleDetails(position);
 
         maintitle = (TextView) findViewById(R.id.detailTitle);
         secondtitle = (TextView) findViewById(R.id.smallTitle);
@@ -59,7 +61,27 @@ public class Details extends Activity{
         reception.setText(detaildata.detReception);
         notice.setText(detaildata.detNotice);
         contact.setText(detaildata.detContact);
-        secondImage.setImageDrawable(getDrawable(R.drawable.out_one));
+
+        switch (position)
+        {
+            case 0:
+                secondImage.setImageDrawable(getDrawable(R.drawable.out_one));
+                break;
+            case 1:
+                secondImage.setImageDrawable(getDrawable(R.drawable.out_second));
+                break;
+            case 2:
+                secondImage.setImageDrawable(getDrawable(R.drawable.out_third));
+                break;
+            case 3:
+                secondImage.setImageDrawable(getDrawable(R.drawable.out_fourth));
+                break;
+            case 4:
+                secondImage.setImageDrawable(getDrawable(R.drawable.out_fivth));
+                break;
+
+        }
+
 
     }
 }
