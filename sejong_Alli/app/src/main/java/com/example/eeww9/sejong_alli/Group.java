@@ -9,15 +9,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.content.Context;
-import android.app.Activity;
 import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
-import com.example.eeww9.sejong_alli.example.Details;
 
 @SuppressLint("ValidFragment")
 public class Group extends Fragment{
