@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/backgroundColor">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Application Guideline"
+        android:textColor="@color/white"
+        android:background="@color/mainColor"
+        android:textSize="11pt"
+        android:padding="5dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title : "
+            android:textSize="9pt"
+            android:textColor="@color/mainColor"/>
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subject : "
+            android:textSize="9pt"
+            android:textColor="@color/mainColor"/>
+
+        <EditText
+            android:id="@+id/editSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personnel : "
+            android:textSize="9pt"
+            android:textColor="@color/mainColor"/>
+
+        <EditText
+            android:id="@+id/editPersonnel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:inputType="phone"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contents"
+        android:textSize="9pt"
+        android:textColor="@color/mainColor"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editContents"
+        android:lines="10"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name : "
+            android:textSize="9pt"
+            android:textColor="@color/mainColor"/>
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Major : "
+            android:textSize="9pt"
+            android:textColor="@color/mainColor"/>
+
+        <EditText
+            android:id="@+id/editMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone : "
+            android:textSize="9pt"
+            android:textColor="@color/mainColor"/>
+
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:background="@color/mainColor"
+        android:textColor="@color/white"
+        android:textSize="10pt"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>

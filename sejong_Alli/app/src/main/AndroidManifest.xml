@@ -20,6 +20,11 @@
         </activity>
         <activity android:name=".example.Details">
         </activity>
+
+        <activity
+            android:name=".WriteGroup">
+        </activity>
+
     </application>
 
 </manifest>

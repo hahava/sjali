@@ -2,7 +2,9 @@ package com.example.eeww9.sejong_alli;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +17,13 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.eeww9.sejong_alli.example.CustomListviewAdapter;
+import com.example.eeww9.sejong_alli.example.Details;
 
 @SuppressLint("ValidFragment")
 public class Group extends Fragment{
     Context mContext;
     Switch groupOnOff;
+
 
     //Example adding
     private ListView MenuList = null;
@@ -55,6 +59,16 @@ public class Group extends Fragment{
                     "스토리, 세대를 잇다!",
                     "~ 2016_12_30");
         }
+
+        //floating Button
+        FloatingActionButton ftb = (FloatingActionButton) view.findViewById(R.id.fab);
+        ftb.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext,WriteGroup.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
