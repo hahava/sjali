@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.example.eeww9.sejong_alli.Group;
 import com.example.eeww9.sejong_alli.InSide;
-import com.example.eeww9.sejong_alli.OutSide;
 
 import java.util.HashMap;
 import java.util.Map;
