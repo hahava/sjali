@@ -1,49 +1,30 @@
 package com.example.eeww9.sejong_alli.fragment;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ListView;
-import android.widget.Switch;
-import android.widget.Toast;
 import com.example.eeww9.sejong_alli.CustomListviewAdapter;
 import com.example.eeww9.sejong_alli.R;
 
-@SuppressLint("ValidFragment")
 public class OutSide extends Fragment {
-	private Context mContext;
-	private Switch outOnOff;
 	private View view;
 	private ListView MenuList;
 	private CustomListviewAdapter ListViewAdapter;
 
-	public OutSide(Context context) {
-		mContext = context;
-	}
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		if (view == null) {
 			view = inflater.inflate(R.layout.out_side, null);
 		}
 
-		// Switch 버튼 함수
-		outOnOff = (Switch)view.findViewById(R.id.outSwitch);
-		outOnOff.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if (isChecked) {
-					Toast.makeText(mContext.getApplicationContext(), "Out Push On", Toast.LENGTH_SHORT).show();
-				} else {
-					Toast.makeText(mContext.getApplicationContext(), "Out Push Off", Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
+		setItemListView();
+		return view;
+	}
 
+	private void setItemListView() {
 		// Example adding
 		MenuList = (ListView)view.findViewById(R.id.outList);
 		ListViewAdapter = new CustomListviewAdapter(getActivity());
@@ -65,7 +46,6 @@ public class OutSide extends Fragment {
 		ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_fivth, null),
 			"서울백병원 개원 85주년 UCC 공모전",
 			"~ 2017_03_31");
-		return view;
 	}
 
 }

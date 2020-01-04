@@ -32,13 +32,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	public Fragment getItem(int position) {
 		switch (position) {
 			case 1:
-				return new OutSide(mContext);
+				return new OutSide();
 			case 2:
 				return new InSide(mContext);
 			case 3:
 				return new Group(mContext);
 		}
-		return new OutSide(mContext);
+		return new OutSide();
 	}
 
 	@Override
