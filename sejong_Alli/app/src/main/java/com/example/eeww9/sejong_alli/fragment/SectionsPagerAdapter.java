@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.example.eeww9.sejong_alli.Group;
 import com.example.eeww9.sejong_alli.InSide;
+import com.example.eeww9.sejong_alli.fragment.Tab.FirstView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,13 +33,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	public Fragment getItem(int position) {
 		switch (position) {
 			case 1:
-				return new OutSide();
+				return new FirstView();
 			case 2:
 				return new InSide(mContext);
 			case 3:
 				return new Group(mContext);
 		}
-		return new OutSide();
+		return new FirstView();
 	}
 
 	@Override

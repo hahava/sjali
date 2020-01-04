@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli.fragment;
+package com.example.eeww9.sejong_alli.fragment.Tab;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,7 @@ import android.widget.ListView;
 import com.example.eeww9.sejong_alli.CustomListviewAdapter;
 import com.example.eeww9.sejong_alli.R;
 
-public class OutSide extends Fragment {
+public class FirstView extends Fragment {
 	private View view;
 	private ListView MenuList;
 	private CustomListviewAdapter ListViewAdapter;
