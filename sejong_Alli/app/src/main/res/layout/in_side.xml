@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    android:padding="10dp"
-    android:background="@color/backgroundColor">
-
-    <Switch
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Push Inside ON/OFF"
-        android:id="@+id/inSwitch"
-        android:layout_gravity="left"/>
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="10dp"
+              android:padding="10dp"
+              android:background="@color/backgroundColor">
 
     <ListView
-        android:id="@+id/inList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="5dp"
-        android:divider="@color/backgroundColor"
-        android:background="@color/white"/>
+            android:id="@+id/inList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="5dp"
+            android:divider="@color/backgroundColor"
+            android:background="@color/white"/>
 </LinearLayout>
