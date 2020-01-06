@@ -32,11 +32,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public Fragment getItem(int position) {
 		switch (position) {
-			case 1:
+			case 0:
 				return new FirstView();
+<<<<<<< develop
 			case 2:
 				return new SecondView();
 			case 3:
+=======
+			case 1:
+				return new InSide(mContext);
+			case 2:
+>>>>>>> Fix fragment index
 				return new Group(mContext);
 		}
 		return new FirstView();
