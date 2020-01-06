@@ -12,22 +12,24 @@ import com.example.eeww9.sejong_alli.R;
 public class SecondView extends Fragment {
 	private View tabInnerView;
 	private ListView items;
-	private CustomListviewAdapter itemListViewApdapter;
+	private CustomListviewAdapter itemListViewAdapter;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		if (tabInnerView == null) {
 			tabInnerView = inflater.inflate(R.layout.in_side, null);
 		}
 
-		//Example
-		items = (ListView)tabInnerView.findViewById(R.id.inList);
-		itemListViewApdapter = new CustomListviewAdapter(getActivity());
-		items.setAdapter(itemListViewApdapter);
+		setItemListView();
+		return tabInnerView;
+	}
 
-		itemListViewApdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
+	private void setItemListView() {
+		items = (ListView)tabInnerView.findViewById(R.id.inList);
+		itemListViewAdapter = new CustomListviewAdapter(getActivity());
+		items.setAdapter(itemListViewAdapter);
+
+		itemListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
 			"스토리, 세대를 잇다!",
 			"~ 2016_12_30");
-
-		return tabInnerView;
 	}
 }
