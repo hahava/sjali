@@ -9,7 +9,7 @@ import android.widget.ListView;
 import com.example.eeww9.sejong_alli.CustomListviewAdapter;
 import com.example.eeww9.sejong_alli.R;
 
-public class InSide extends Fragment {
+public class SecondView extends Fragment {
 	private View tabInnerView;
 	private ListView items;
 	private CustomListviewAdapter itemListViewApdapter;
