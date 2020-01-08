@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.example.eeww9.sejong_alli.Group;
+import com.example.eeww9.sejong_alli.fragment.Tab.Group;
 import com.example.eeww9.sejong_alli.fragment.Tab.SecondView;
 import com.example.eeww9.sejong_alli.fragment.Tab.FirstView;
 

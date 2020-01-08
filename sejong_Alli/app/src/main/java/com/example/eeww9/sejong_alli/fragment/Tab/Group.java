@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli;
+package com.example.eeww9.sejong_alli.fragment.Tab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
+import com.example.eeww9.sejong_alli.*;
 
 import java.util.ArrayList;
 
@@ -35,20 +36,9 @@ public class Group extends Fragment{
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if(view==null)
-        view = inflater.inflate(R.layout.group, null);
-
-        groupOnOff = (Switch) view.findViewById(R.id.groupSwitch);
-        groupOnOff.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    Toast.makeText( mContext.getApplicationContext(),"Group Push On",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText( mContext.getApplicationContext(),"Group Push Off",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        if(view==null){
+			view = inflater.inflate(R.layout.group, null);
+		}
 
         //Example
         MenuList=(ListView) view.findViewById(R.id.groupList);
@@ -56,7 +46,7 @@ public class Group extends Fragment{
         MenuList.setAdapter(ListViewAdapter);
         parser=new DetailParser();
         //floating Button
-        new JsoupAsyncTask().execute(null,null,null);
+//        new JsoupAsyncTask().execute(null,null,null);
 
         FloatingActionButton ftb = (FloatingActionButton) view.findViewById(R.id.fab);
         ftb.setOnClickListener(new View.OnClickListener(){
@@ -71,21 +61,21 @@ public class Group extends Fragment{
         return view;
 
     }
-    // 제목, 원하는 인원수, 내용, 토의주제, 이름(발의자), 전공 // 소그룹 ,핸드폰 번호
-    public class JsoupAsyncTask extends AsyncTask<String, String,  ArrayList<DetailAdding>> {
-        protected void onPreExecute(String... params){
-            super.onPreExecute();
-        }
-
-        protected ArrayList<DetailAdding> doInBackground(String... params){
-
-            return parser.connectFest();
-        }
-
-        protected void onPostExecute (ArrayList<DetailAdding> result) {
-           // 리스트뷰 여기에 구현하시면 됩니다.
-        }
-    }
+//    // 제목, 원하는 인원수, 내용, 토의주제, 이름(발의자), 전공 // 소그룹 ,핸드폰 번호
+//    public class JsoupAsyncTask extends AsyncTask<String, String,  ArrayList<DetailAdding>> {
+//        protected void onPreExecute(String... params){
+//            super.onPreExecute();
+//        }
+//
+//        public ArrayList<DetailAdding> doInBackground(String... params){
+//
+//            return parser.connectFest();
+//        }
+//
+//        protected void onPostExecute (ArrayList<DetailAdding> result) {
+//           // 리스트뷰 여기에 구현하시면 됩니다.
+//        }
+//    }
 
 
 }
