@@ -1,24 +1,21 @@
 package com.example.eeww9.sejong_alli.fragment;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.example.eeww9.sejong_alli.fragment.Tab.ThirdView;
-import com.example.eeww9.sejong_alli.fragment.Tab.SecondView;
 import com.example.eeww9.sejong_alli.fragment.Tab.FirstView;
+import com.example.eeww9.sejong_alli.fragment.Tab.SecondView;
+import com.example.eeww9.sejong_alli.fragment.Tab.ThirdView;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-	private Context mContext;
 	private static Map<Integer, String> pageTitle = setPageTitle();
 
-	public SectionsPagerAdapter(Context context, FragmentManager fm) {
+	public SectionsPagerAdapter(FragmentManager fm) {
 		super(fm);
-		mContext = context;
 	}
 
 	private static Map<Integer, String> setPageTitle() {
