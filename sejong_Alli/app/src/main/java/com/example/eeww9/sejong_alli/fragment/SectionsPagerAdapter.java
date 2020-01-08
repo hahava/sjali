@@ -6,47 +6,40 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.eeww9.sejong_alli.fragment.Tab.FirstView;
 import com.example.eeww9.sejong_alli.fragment.Tab.SecondView;
 import com.example.eeww9.sejong_alli.fragment.Tab.ThirdView;
+import com.example.eeww9.sejong_alli.model.TabMetaInfo;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-	private static Map<Integer, String> pageTitle = setPageTitle();
+	private static Map<Integer, TabMetaInfo> tabPageInfo = setPageTitle();
 
 	public SectionsPagerAdapter(FragmentManager fm) {
 		super(fm);
 	}
 
-	private static Map<Integer, String> setPageTitle() {
-		Map<Integer, String> pageTitle = new HashMap<>();
-		pageTitle.put(0, "외부");
-		pageTitle.put(1, "교내");
-		pageTitle.put(2, "소모임");
+	private static Map<Integer, TabMetaInfo> setPageTitle() {
+		Map<Integer, TabMetaInfo> pageTitle = new HashMap<>();
+		pageTitle.put(0, new TabMetaInfo("외부", new FirstView()));
+		pageTitle.put(1, new TabMetaInfo("교내", new SecondView()));
+		pageTitle.put(2, new TabMetaInfo("소모임", new ThirdView()));
 		return pageTitle;
 	}
 
 	@Override
 	public Fragment getItem(int position) {
-		switch (position) {
-			case 0:
-				return new FirstView();
-			case 1:
-				return new SecondView();
-			case 2:
-				return new ThirdView();
-		}
-		return new FirstView();
+		return tabPageInfo.get(position).getInnerView();
 	}
 
 	@Override
 	public int getCount() {
-		return pageTitle.size();
+		return tabPageInfo.size();
 	}
 
 	@Override
 	public CharSequence getPageTitle(int position) {
-		return pageTitle.get(position);
+		return tabPageInfo.get(position).getPageTitle();
 	}
 
 }
