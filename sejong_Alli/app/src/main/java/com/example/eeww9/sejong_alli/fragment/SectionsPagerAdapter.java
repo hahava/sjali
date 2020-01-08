@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.example.eeww9.sejong_alli.Group;
+import com.example.eeww9.sejong_alli.fragment.Tab.ThirdView;
 import com.example.eeww9.sejong_alli.fragment.Tab.SecondView;
 import com.example.eeww9.sejong_alli.fragment.Tab.FirstView;
 
@@ -37,7 +37,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 			case 1:
 				return new SecondView();
 			case 2:
-				return new Group(mContext);
+				return new ThirdView();
 		}
 		return new FirstView();
 	}
