@@ -11,19 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.sejong.hungryduck.Details;
 import com.sejong.hungryduck.model.CustomItem;
+import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomListviewAdapter extends BaseAdapter {
 
-	private Context allMenuContext;
-	private ArrayList<CustomItem> allMenuListData = new ArrayList<>();
-	private CustomItem addInfo;
-
-	public CustomListviewAdapter(Context allMenuContext) {
-		this.allMenuContext = allMenuContext;
-	}
+	private List<CustomItem> allMenuListData = new ArrayList<>();
+	private ViewHolder viewHolder;
 
 	@Override
 	public int getCount() {
@@ -40,55 +37,48 @@ public class CustomListviewAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public void addItem(Drawable cusimage, String custitle, String cusdate) {
-		addInfo = new CustomItem();
-		addInfo.setThumbnailImage(cusimage);
-		addInfo.setTitle(custitle);
-		addInfo.setRegDate(cusdate);
-		allMenuListData.add(addInfo);
+	public void addItem(Drawable thumbnailImage, String title, String regDate) {
+		CustomItem item = new CustomItem();
+		item.setThumbnailImage(thumbnailImage);
+		item.setTitle(title);
+		item.setRegDate(regDate);
+		allMenuListData.add(item);
 	}
 
-	private class ViewHolder {
-		public ImageView CusImage;
-		public TextView CusTitle;
-		public TextView CusDate;
+	private void viewBindings(View view) {
+		viewHolder.setThumbnailImageView((ImageView)view.findViewById(R.id.customImage));
+		viewHolder.setTitleView((TextView)view.findViewById(R.id.customTitle));
+		viewHolder.setRegDateView((TextView)view.findViewById(R.id.customDate));
 	}
 
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
-		ViewHolder cusData;
 		if (convertView == null) {
-			cusData = new ViewHolder();
-
-			LayoutInflater inflater = (LayoutInflater)allMenuContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			viewHolder = new ViewHolder();
+			LayoutInflater inflater = (LayoutInflater)parent.getContext()
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflater.inflate(R.layout.custom_view, null);
-
-			//리스트에 들어갈 데이터
-			cusData.CusImage = (ImageView)convertView.findViewById(R.id.customImage);
-			cusData.CusTitle = (TextView)convertView.findViewById(R.id.customTitle);
-			cusData.CusDate = (TextView)convertView.findViewById(R.id.customDate);
-
-			convertView.setTag(cusData);
+			viewBindings(convertView);
+			convertView.setTag(viewHolder);
 		} else {
-			cusData = (ViewHolder)convertView.getTag();
+			viewHolder = (ViewHolder)convertView.getTag();
 		}
 
-		CustomItem allMenuData = allMenuListData.get(position);
+		CustomItem selectedItem = allMenuListData.get(position);
 
-		if (allMenuData.getThumbnailImage() != null) {
-			cusData.CusImage.setVisibility(View.VISIBLE);
-			cusData.CusImage.setImageDrawable(allMenuData.getThumbnailImage());
+		if (selectedItem.getThumbnailImage() != null) {
+			viewHolder.getThumbnailImageView().setVisibility(View.VISIBLE);
+			viewHolder.getThumbnailImageView().setImageDrawable(selectedItem.getThumbnailImage());
 		} else {
-			cusData.CusImage.setVisibility(View.GONE);
+			viewHolder.getThumbnailImageView().setVisibility(View.GONE);
 		}
-
-		cusData.CusTitle.setText(allMenuData.getTitle());
-		cusData.CusDate.setText(allMenuData.getRegDate());
+		viewHolder.getTitleView().setText(selectedItem.getTitle());
+		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
 
 		convertView.setOnClickListener(v -> {
-			Intent intent = new Intent(allMenuContext, Details.class);
+			Intent intent = new Intent(parent.getContext(), Details.class);
 			intent.putExtra("number", position);
-			allMenuContext.startActivity(intent);
+			parent.getContext().startActivity(intent);
 		});
 
 		return convertView;

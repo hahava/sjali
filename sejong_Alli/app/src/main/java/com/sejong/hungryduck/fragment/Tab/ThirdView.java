@@ -25,7 +25,7 @@ public class ThirdView extends Fragment {
 		}
 
 		groups = (ListView)tabInnerView.findViewById(R.id.groupList);
-		listViewAdapter = new CustomListviewAdapter(getActivity());
+		listViewAdapter = new CustomListviewAdapter();
 		groups.setAdapter(listViewAdapter);
 
 		groupAddBtn = (FloatingActionButton)tabInnerView.findViewById(R.id.fab);

@@ -27,7 +27,7 @@ public class FirstView extends Fragment {
 	private void setItemListView() {
 		// Example adding
 		MenuList = (ListView)view.findViewById(R.id.outList);
-		ListViewAdapter = new CustomListviewAdapter(getActivity());
+		ListViewAdapter = new CustomListviewAdapter();
 		MenuList.setAdapter(ListViewAdapter);
 
 		ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),

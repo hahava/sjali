@@ -25,7 +25,7 @@ public class SecondView extends Fragment {
 
 	private void setItemListView() {
 		items = (ListView)tabInnerView.findViewById(R.id.inList);
-		itemListViewAdapter = new CustomListviewAdapter(getActivity());
+		itemListViewAdapter = new CustomListviewAdapter();
 		items.setAdapter(itemListViewAdapter);
 
 		itemListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
