@@ -1,12 +1,12 @@
-package com.example.eeww9.sejong_alli.fragment;
+package com.sejong.hungryduck.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.example.eeww9.sejong_alli.fragment.Tab.FirstView;
-import com.example.eeww9.sejong_alli.fragment.Tab.SecondView;
-import com.example.eeww9.sejong_alli.fragment.Tab.ThirdView;
-import com.example.eeww9.sejong_alli.model.TabMetaInfo;
+import com.sejong.hungryduck.fragment.Tab.FirstView;
+import com.sejong.hungryduck.fragment.Tab.SecondView;
+import com.sejong.hungryduck.fragment.Tab.ThirdView;
+import com.sejong.hungryduck.model.TabMetaInfo;
 
 import java.util.HashMap;
 import java.util.Map;

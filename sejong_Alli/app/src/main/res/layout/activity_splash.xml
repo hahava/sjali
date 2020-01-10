@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainColor"
-    tools:context="com.example.eeww9.sejong_alli.activity.Splash">
+    tools:context="com.sejong.hungryduck.activity.Splash">
 
     <ImageView
         android:layout_gravity="center"

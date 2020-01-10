@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli.model;
+package com.sejong.hungryduck.model;
 
 import android.support.v4.app.Fragment;
 

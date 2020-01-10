@@ -1,11 +1,11 @@
-package com.example.eeww9.sejong_alli.activity;
+package com.sejong.hungryduck.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import com.example.eeww9.sejong_alli.R;
-import com.example.eeww9.sejong_alli.fragment.SectionsPagerAdapter;
+import com.sejong.hungryduck.sejong.R;
+import com.sejong.hungryduck.fragment.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

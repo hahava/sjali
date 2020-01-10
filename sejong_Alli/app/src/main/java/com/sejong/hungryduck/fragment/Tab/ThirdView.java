@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli.fragment.Tab;
+package com.sejong.hungryduck.fragment.Tab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.example.eeww9.sejong_alli.CustomListviewAdapter;
-import com.example.eeww9.sejong_alli.R;
-import com.example.eeww9.sejong_alli.WriteGroup;
+import com.sejong.hungryduck.CustomListviewAdapter;
+import com.sejong.hungryduck.sejong.R;
+import com.sejong.hungryduck.WriteGroup;
 
 public class ThirdView extends Fragment {
 

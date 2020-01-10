@@ -1,9 +1,10 @@
-package com.example.eeww9.sejong_alli;
+package com.sejong.hungryduck;
 
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import com.sejong.hungryduck.sejong.R;
 
 public class WriteGroup extends Activity{
 

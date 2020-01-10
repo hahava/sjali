@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli.fragment.Tab;
+package com.sejong.hungryduck.fragment.Tab;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.example.eeww9.sejong_alli.CustomListviewAdapter;
-import com.example.eeww9.sejong_alli.R;
+import com.sejong.hungryduck.CustomListviewAdapter;
+import com.sejong.hungryduck.sejong.R;
 
 public class FirstView extends Fragment {
 	private View view;
