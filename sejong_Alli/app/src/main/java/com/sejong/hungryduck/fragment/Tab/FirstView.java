@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.sejong.hungryduck.CustomListviewAdapter;
+import com.sejong.hungryduck.viewadapter.CustomListviewAdapter;
 import com.sejong.hungryduck.sejong.R;
 
 public class FirstView extends Fragment {

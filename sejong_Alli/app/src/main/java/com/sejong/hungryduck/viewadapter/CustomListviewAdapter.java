@@ -1,4 +1,4 @@
-package com.sejong.hungryduck;
+package com.sejong.hungryduck.viewadapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.sejong.hungryduck.Details;
+import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.sejong.R;
 
 import java.util.ArrayList;
@@ -41,9 +43,9 @@ public class CustomListviewAdapter extends BaseAdapter{
 
     public void addItem(Drawable cusimage, String custitle, String cusdate){
         addInfo = new CustomItem();
-        addInfo.cusImage = cusimage;
-        addInfo.cusTitle = custitle;
-        addInfo.cusDate = cusdate;
+        addInfo.setThumbnailImage(cusimage);
+        addInfo.setTitle(custitle);
+        addInfo.setRegDate(cusdate);
         allMenuListData.add(addInfo);
     }
 
@@ -75,16 +77,16 @@ public class CustomListviewAdapter extends BaseAdapter{
 
         CustomItem allMenuData = allMenuListData.get(position);
 
-        if(allMenuData.cusImage != null){
+        if(allMenuData.getThumbnailImage() != null){
             cusData.CusImage.setVisibility(View.VISIBLE);
-            cusData.CusImage.setImageDrawable(allMenuData.cusImage);
+            cusData.CusImage.setImageDrawable(allMenuData.getThumbnailImage());
         }
         else{
             cusData.CusImage.setVisibility(View.GONE);
         }
 
-        cusData.CusTitle.setText(allMenuData.cusTitle);
-        cusData.CusDate.setText(allMenuData.cusDate);
+        cusData.CusTitle.setText(allMenuData.getTitle());
+        cusData.CusDate.setText(allMenuData.getRegDate());
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
