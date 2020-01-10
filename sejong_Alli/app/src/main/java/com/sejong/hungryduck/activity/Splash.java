@@ -1,10 +1,10 @@
-package com.example.eeww9.sejong_alli.activity;
+package com.sejong.hungryduck.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import com.example.eeww9.sejong_alli.R;
+import com.sejong.hungryduck.sejong.R;
 
 /**
  * 첫 화면시 나타나는 splash view

@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli;
+package com.sejong.hungryduck;
 
 /**
  * Created by eeww9 on 2016-12-20.

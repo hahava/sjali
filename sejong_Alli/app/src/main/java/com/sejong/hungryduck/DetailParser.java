@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli;
+package com.sejong.hungryduck;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

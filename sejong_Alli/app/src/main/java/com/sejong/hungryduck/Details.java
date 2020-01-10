@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli;
+package com.sejong.hungryduck;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.sejong.hungryduck.sejong.R;
 
 public class Details extends Activity{
 

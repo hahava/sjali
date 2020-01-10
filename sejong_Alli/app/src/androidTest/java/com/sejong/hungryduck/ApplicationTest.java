@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli;
+package com.sejong.hungryduck;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

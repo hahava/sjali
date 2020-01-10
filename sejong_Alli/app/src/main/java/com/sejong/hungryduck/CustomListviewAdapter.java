@@ -1,4 +1,4 @@
-package com.example.eeww9.sejong_alli;
+package com.sejong.hungryduck;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.sejong.hungryduck.sejong.R;
 
 import java.util.ArrayList;
 
