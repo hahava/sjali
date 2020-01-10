@@ -11,6 +11,9 @@ import android.widget.ListView;
 import com.sejong.hungryduck.CustomListviewAdapter;
 import com.sejong.hungryduck.sejong.R;
 import com.sejong.hungryduck.WriteGroup;
+import com.sejong.hungryduck.viewadapter.CustomListviewAdapter;
+import com.sejong.hungryduck.sejong.R;
+import com.sejong.hungryduck.WriteGroup;
 
 public class ThirdView extends Fragment {
 
@@ -25,7 +28,7 @@ public class ThirdView extends Fragment {
 		}
 
 		groups = (ListView)tabInnerView.findViewById(R.id.groupList);
-		listViewAdapter = new CustomListviewAdapter(getActivity());
+		listViewAdapter = new CustomListviewAdapter();
 		groups.setAdapter(listViewAdapter);
 
 		groupAddBtn = (FloatingActionButton)tabInnerView.findViewById(R.id.fab);

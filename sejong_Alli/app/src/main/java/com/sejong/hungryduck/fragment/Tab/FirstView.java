@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.sejong.hungryduck.CustomListviewAdapter;
+import com.sejong.hungryduck.viewadapter.CustomListviewAdapter;
 import com.sejong.hungryduck.sejong.R;
 
 public class FirstView extends Fragment {
@@ -27,7 +27,7 @@ public class FirstView extends Fragment {
 	private void setItemListView() {
 		// Example adding
 		MenuList = (ListView)view.findViewById(R.id.outList);
-		ListViewAdapter = new CustomListviewAdapter(getActivity());
+		ListViewAdapter = new CustomListviewAdapter();
 		MenuList.setAdapter(ListViewAdapter);
 
 		ListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
