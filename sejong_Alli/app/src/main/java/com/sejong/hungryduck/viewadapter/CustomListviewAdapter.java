@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.sejong.hungryduck.Details;
+import com.sejong.hungryduck.ListItemView;
 import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
@@ -76,8 +76,8 @@ public class CustomListviewAdapter extends BaseAdapter {
 		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
 
 		convertView.setOnClickListener(v -> {
-			Intent intent = new Intent(parent.getContext(), Details.class);
-			intent.putExtra("number", position);
+			Intent intent = new Intent(parent.getContext(), ListItemView.class);
+			intent.putExtra("itemNumber", position);
 			parent.getContext().startActivity(intent);
 		});
 
