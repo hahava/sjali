@@ -1,158 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp"
-    android:background="@color/backgroundColor">
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:background="@color/backgroundColor">
 
     <TextView
-        android:id="@+id/topText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Application Guideline"
-        android:textColor="@color/white"
-        android:background="@color/mainColor"
-        android:textSize="11pt"
-        android:padding="5dp"
-        />
-    <LinearLayout
-        android:id="@+id/oneLiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/topText">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title : "
-            android:textSize="9pt"
-            android:textColor="@color/mainColor"/>
-
-        <EditText
-            android:id="@+id/editTitle"
+            android:id="@+id/topText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="소모임 모집하기"
+            android:textColor="@color/white"
+            android:background="@color/mainColor"
+            android:textSize="11pt"
+            android:padding="5dp"/>
+
+    <LinearLayout
+            android:id="@+id/oneLiner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topText">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목 : "
+                android:textSize="@dimen/write_view_small_title"
+                android:textColor="@color/mainColor"/>
+
+        <EditText
+                android:maxLength="20"
+                android:inputType="text"
+                android:maxLines="1"
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/twoLiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/oneLiner">
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/twoLiner"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Subject : "
-            android:textSize="9pt"
-            android:textColor="@color/mainColor"/>
+            android:layout_below="@+id/oneLiner">
 
-        <EditText
-            android:id="@+id/editSubject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주제 : "
+                    android:textSize="@dimen/write_view_small_title"
+                    android:textColor="@color/mainColor"/>
+            <EditText
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="11"
+                    android:id="@+id/editSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Personnel : "
-            android:textSize="9pt"
-            android:textColor="@color/mainColor"/>
-
-        <EditText
-            android:id="@+id/editPersonnel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4"
-            android:inputType="phone"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/threeLiner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contents"
-        android:textSize="9pt"
-        android:textColor="@color/mainColor"
-        android:layout_below="@+id/twoLiner"/>
+            android:id="@+id/threeLiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내용"
+            android:textSize="@dimen/write_view_small_title"
+            android:textColor="@color/mainColor"
+            android:layout_below="@+id/twoLiner"/>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editContents"
-        android:lines="10"
-        android:background="@color/white"
-        android:layout_below="@+id/threeLiner"/>
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editContents"
+            android:lines="10"
+            android:background="@color/white"
+            android:layout_below="@+id/threeLiner"/>
 
     <LinearLayout
-        android:id="@+id/fourLiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editContents">
+            android:id="@+id/fourLiner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editContents">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name : "
-            android:textSize="9pt"
-            android:textColor="@color/mainColor"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="작성자 : "
+                android:textSize="@dimen/write_view_small_title"
+                android:textColor="@color/mainColor"/>
 
         <EditText
-            android:id="@+id/editName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                android:maxLength="20"
+                android:inputType="text"
+                android:maxLines="1"
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/fiveLiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fourLiner">
+            android:id="@+id/fiveLiner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fourLiner">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Major : "
-            android:textSize="9pt"
-            android:textColor="@color/mainColor"/>
+                android:maxLength="20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전공 : "
+                android:textSize="@dimen/write_view_small_title"
+                android:textColor="@color/mainColor"/>
 
         <EditText
-            android:id="@+id/editMajor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                android:maxLength="15"
+                android:inputType="text"
+                android:maxLines="1"
+                android:id="@+id/editMajor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/sixLiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fiveLiner">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone : "
-            android:textSize="9pt"
-            android:textColor="@color/mainColor"/>
-
-        <EditText
-            android:id="@+id/editPhone"
+            android:id="@+id/sixLiner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"/>
+            android:layout_below="@+id/fiveLiner">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="연락처 : "
+                android:textSize="@dimen/write_view_small_title"
+                android:textColor="@color/mainColor"/>
+
+        <EditText
+                android:maxLength="11"
+                android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"/>
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="add"
-        android:background="@color/mainColor"
-        android:textColor="@color/white"
-        android:textSize="10pt"
-        android:layout_gravity="bottom"
-        android:layout_below="@+id/sixLiner"/>
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="글쓰기"
+            android:background="@color/mainColor"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_text_size"
+            android:layout_gravity="bottom"
+            android:layout_below="@+id/sixLiner"/>
 </RelativeLayout>

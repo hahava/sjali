@@ -28,7 +28,7 @@ public class SecondView extends Fragment {
 		itemListViewAdapter = new CustomListviewAdapter();
 		items.setAdapter(itemListViewAdapter);
 
-		itemListViewAdapter.addItem(getResources().getDrawable(R.drawable.out_one, null),
+		itemListViewAdapter.addItem(getResources().getDrawable(R.drawable.board_item_basic_thumbnail, null),
 			"스토리, 세대를 잇다!",
 			"~ 2016_12_30");
 	}
