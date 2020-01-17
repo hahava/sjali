@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="제목 : "
-                android:textSize="9pt"
+                android:textSize="@dimen/write_view_small_title"
                 android:textColor="@color/mainColor"/>
 
         <EditText
@@ -51,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="주제 : "
-                    android:textSize="9pt"
+                    android:textSize="@dimen/write_view_small_title"
                     android:textColor="@color/mainColor"/>
             <EditText
                     android:inputType="text"
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="내용"
-            android:textSize="9pt"
+            android:textSize="@dimen/write_view_small_title"
             android:textColor="@color/mainColor"
             android:layout_below="@+id/twoLiner"/>
 
@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="작성자 : "
-                android:textSize="9pt"
+                android:textSize="@dimen/write_view_small_title"
                 android:textColor="@color/mainColor"/>
 
         <EditText
@@ -115,10 +115,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="전공 : "
-                android:textSize="9pt"
+                android:textSize="@dimen/write_view_small_title"
                 android:textColor="@color/mainColor"/>
 
         <EditText
+                android:maxLength="15"
                 android:inputType="text"
                 android:maxLines="1"
                 android:id="@+id/editMajor"
@@ -136,10 +137,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="연락처 : "
-                android:textSize="9pt"
+                android:textSize="@dimen/write_view_small_title"
                 android:textColor="@color/mainColor"/>
 
         <EditText
+                android:maxLength="11"
                 android:id="@+id/editPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,7 +155,7 @@
             android:text="글쓰기"
             android:background="@color/mainColor"
             android:textColor="@color/white"
-            android:textSize="10pt"
+            android:textSize="@dimen/btn_text_size"
             android:layout_gravity="bottom"
             android:layout_below="@+id/sixLiner"/>
 </RelativeLayout>
