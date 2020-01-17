@@ -29,7 +29,7 @@
                 android:id="@+id/detailImage"
                 android:layout_width="110dp"
                 android:layout_height="130dp"
-                android:src="@drawable/basic_image"
+                android:src="@drawable/board_item_basic_thumbnail"
                 android:scaleType="fitXY"/>
 
             <LinearLayout
