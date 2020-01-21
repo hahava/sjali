@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sejong.hungryduck.data.SampleData;
-import com.sejong.hungryduck.model.ListItem;
+import com.sejong.hungryduck.model.Postings;
 import com.sejong.hungryduck.sejong.R;
 
 public class ListItemView extends Activity {
@@ -33,7 +33,7 @@ public class ListItemView extends Activity {
 	}
 
 	private void setViewBinding(int position) {
-		ListItem selectedItem = SampleData.getInstance().getListItems(position);
+		Postings selectedItem = SampleData.getInstance().getListItems(position);
 		maintitle = (TextView)findViewById(R.id.detailTitle);
 		secondtitle = (TextView)findViewById(R.id.smallTitle);
 		secondhost = (TextView)findViewById(R.id.smallHost);
@@ -51,14 +51,14 @@ public class ListItemView extends Activity {
 
 		maintitle.setText(selectedItem.getMainTitle());
 		secondtitle.setText(selectedItem.getSecondTitle());
-		secondhost.setText(selectedItem.getSecondHost());
-		seconddate.setText(selectedItem.getSecondDate());
-		attend.setText(selectedItem.getDetAttend());
-		contents.setText(selectedItem.getDetContents());
-		benefits.setText(selectedItem.getDetBenefits());
-		date.setText(selectedItem.getDetDate());
-		reception.setText(selectedItem.getDetReception());
-		notice.setText(selectedItem.getDetNotice());
-		contact.setText(selectedItem.getDetContact());
+		secondhost.setText(selectedItem.getHost());
+		seconddate.setText(selectedItem.getEndDate());
+		attend.setText(selectedItem.getLimitingCondition());
+		contents.setText(selectedItem.getContents());
+		benefits.setText(selectedItem.getWinnerPrize());
+		date.setText(selectedItem.getStartDate());
+		reception.setText(selectedItem.getReception());
+		notice.setText(selectedItem.getNotice());
+		contact.setText(selectedItem.getContact());
 	}
 }

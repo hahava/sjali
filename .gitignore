@@ -13,10 +13,10 @@ new-server/.idea/modules.xml
 
 new-server/.idea/vcs.xml
 
-*.properties
-
 new-server/mvnw
 
 new-server/mvnw.cmd
 
 new-server/new-server.iml
+
+new-server/.mvn/wrapper/maven-wrapper.properties
