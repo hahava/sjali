@@ -1,4 +1,4 @@
-package com.sejong.hungryduck;
+package com.sejong.hungryduck.activity;
 
 import android.app.Activity;
 import android.content.Intent;

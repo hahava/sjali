@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.sejong.hungryduck.viewadapter.CustomListviewAdapter;
+import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
 import com.sejong.hungryduck.sejong.R;
 
 public class FirstView extends Fragment {
 	private View view;
 	private ListView MenuList;
-	private CustomListviewAdapter ListViewAdapter;
+	private PostingsListviewAdapter ListViewAdapter;
 
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class FirstView extends Fragment {
 	private void setItemListView() {
 		// Example adding
 		MenuList = (ListView)view.findViewById(R.id.outList);
-		ListViewAdapter = new CustomListviewAdapter();
+		ListViewAdapter = new PostingsListviewAdapter();
 		MenuList.setAdapter(ListViewAdapter);
 
 		ListViewAdapter.addItem(getResources().getDrawable(R.drawable.board_item_basic_thumbnail, null),

@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.sejong.hungryduck.viewadapter.CustomListviewAdapter;
+import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
 import com.sejong.hungryduck.sejong.R;
 
 public class SecondView extends Fragment {
 	private View tabInnerView;
 	private ListView items;
-	private CustomListviewAdapter itemListViewAdapter;
+	private PostingsListviewAdapter itemListViewAdapter;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		if (tabInnerView == null) {
@@ -25,7 +25,7 @@ public class SecondView extends Fragment {
 
 	private void setItemListView() {
 		items = (ListView)tabInnerView.findViewById(R.id.inList);
-		itemListViewAdapter = new CustomListviewAdapter();
+		itemListViewAdapter = new PostingsListviewAdapter();
 		items.setAdapter(itemListViewAdapter);
 
 		itemListViewAdapter.addItem(getResources().getDrawable(R.drawable.board_item_basic_thumbnail, null),
