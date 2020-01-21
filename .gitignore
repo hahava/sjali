@@ -1,2 +1,22 @@
 
 sejong_Alli/.idea/modules.xml
+
+new-server/.idea/.name
+
+new-server/.idea/compiler.xml
+
+new-server/.idea/encodings.xml
+
+new-server/.idea/misc.xml
+
+new-server/.idea/modules.xml
+
+new-server/.idea/vcs.xml
+
+*.properties
+
+new-server/mvnw
+
+new-server/mvnw.cmd
+
+new-server/new-server.iml
