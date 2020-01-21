@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.sejong.hungryduck.PostingsListView;
+import com.sejong.hungryduck.activity.PostingsListView;
 import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
@@ -17,7 +17,7 @@ import com.sejong.hungryduck.sejong.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomListviewAdapter extends BaseAdapter {
+public class PostingsListviewAdapter extends BaseAdapter {
 
 	private List<CustomItem> allMenuListData = new ArrayList<>();
 	private ViewHolder viewHolder;

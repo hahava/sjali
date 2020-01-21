@@ -8,18 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.sejong.hungryduck.CustomListviewAdapter;
+import com.sejong.hungryduck.activity.WriteGroup;
 import com.sejong.hungryduck.sejong.R;
-import com.sejong.hungryduck.WriteGroup;
-import com.sejong.hungryduck.viewadapter.CustomListviewAdapter;
-import com.sejong.hungryduck.sejong.R;
-import com.sejong.hungryduck.WriteGroup;
+import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
 
 public class ThirdView extends Fragment {
 
 	private View tabInnerView;
 	private ListView groups;
-	private CustomListviewAdapter listViewAdapter;
+	private PostingsListviewAdapter listViewAdapter;
 	private FloatingActionButton groupAddBtn;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,7 +25,7 @@ public class ThirdView extends Fragment {
 		}
 
 		groups = (ListView)tabInnerView.findViewById(R.id.groupList);
-		listViewAdapter = new CustomListviewAdapter();
+		listViewAdapter = new PostingsListviewAdapter();
 		groups.setAdapter(listViewAdapter);
 
 		groupAddBtn = (FloatingActionButton)tabInnerView.findViewById(R.id.fab);
