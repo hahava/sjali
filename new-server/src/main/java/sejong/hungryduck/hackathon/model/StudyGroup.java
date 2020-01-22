@@ -1,7 +1,6 @@
 package sejong.hungryduck.hackathon.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,6 +11,10 @@ import java.time.LocalDateTime;
 @Table
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString
 public class StudyGroup {
 
 	@Id
