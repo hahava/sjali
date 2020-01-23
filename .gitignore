@@ -20,3 +20,5 @@ new-server/mvnw.cmd
 new-server/new-server.iml
 
 new-server/.mvn/wrapper/maven-wrapper.properties
+
+new-server/.idea/dataSources.xml
