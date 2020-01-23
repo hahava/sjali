@@ -37,7 +37,7 @@ public class StudyGroupController {
 	}
 
 	@PostMapping("/studyGroup")
-	public ResponseEntity<String> addStudyGroup(@Valid StudyGroup studyGroup, BindingResult br) {
+	public ResponseEntity<String> addStudyGroup(@Valid @RequestBody StudyGroup studyGroup, BindingResult br) {
 		if (br.hasErrors()) {
 			return new ResponseEntity<>("Not valid params", BAD_REQUEST);
 		}
