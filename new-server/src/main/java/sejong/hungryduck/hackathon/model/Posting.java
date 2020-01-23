@@ -1,7 +1,6 @@
 package sejong.hungryduck.hackathon.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +11,11 @@ import java.time.LocalDateTime;
 @Table
 @Getter
 @Setter
-public class Postings {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Posting {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
