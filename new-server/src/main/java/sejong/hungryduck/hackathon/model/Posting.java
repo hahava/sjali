@@ -21,28 +21,11 @@ public class Posting {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
+
 	@NotNull
-	private String mainTitle;
-	@NotNull
-	private String secondTitle;
-	@NotNull
-	private String host;
-	@NotNull
-	private String limitingCondition;
-	@NotNull
-	private String contents;
-	@NotNull
-	private String winnerPrize;
-	@NotNull
-	private String startDate;
-	@NotNull
-	private String endDate;
-	@NotNull
-	private String reception;
-	@NotNull
-	private String notice;
-	@NotNull
-	private String contact;
+	private String mainTitle, secondTitle, host, limitingCondition, contents, winnerPrize, startDate, endDate, reception, notice, contact;
+
+	private String imgPath="";
 
 	@CreationTimestamp
 	private LocalDateTime creationTime;
