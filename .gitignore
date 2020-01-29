@@ -22,3 +22,5 @@ new-server/new-server.iml
 new-server/.mvn/wrapper/maven-wrapper.properties
 
 new-server/.idea/dataSources.xml
+
+new-server/hackathon.iml
