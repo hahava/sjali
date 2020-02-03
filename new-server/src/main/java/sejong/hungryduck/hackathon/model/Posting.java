@@ -22,10 +22,10 @@ public class Posting {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long no;
 
-	@NotNull
+	@Column(length = 1000, nullable = false)
 	private String mainTitle, secondTitle, host, limitingCondition, contents, winnerPrize, startDate, endDate, reception, notice, contact;
 
-	private String imgPath="";
+	private String imgPath = "";
 
 	@CreationTimestamp
 	private LocalDateTime creationTime;
