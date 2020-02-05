@@ -7,9 +7,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sejong.hungryduck.apicall.PostingService;
 import com.sejong.hungryduck.data.SampleData;
 import com.sejong.hungryduck.model.Postings;
 import com.sejong.hungryduck.sejong.R;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+
+import java.util.List;
 
 public class PostingsListView extends Activity {
 
@@ -32,6 +37,15 @@ public class PostingsListView extends Activity {
 		setContentView(R.layout.detail_info);
 		Intent intent = getIntent();
 		setViewBinding(intent.getExtras().getInt("itemNumber"));
+		getPosting();
+	}
+
+	private void getPosting() {
+		Retrofit retrofit = new Retrofit.Builder()
+			.baseUrl("http//" + R.string.DEV_ADDRESS)
+			.build();
+
+		PostingService postingService = retrofit.create(PostingService.class);
 	}
 
 	private void setViewBinding(int position) {
