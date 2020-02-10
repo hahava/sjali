@@ -1,20 +1,29 @@
 package com.sejong.hungryduck.model;
 
-import android.graphics.drawable.Drawable;
+import java.io.Serializable;
 
-public class Postings {
-	private String mainTitle;
-	private Drawable secondImage;
-	private String secondTitle;
-	private String host;
-	private String limitingCondition;
-	private String contents;
-	private String winnerPrize;
-	private String startDate;
-	private String endDate;
-	private String reception;
-	private String notice;
-	private String contact;
+public class Posting implements Serializable {
+	private Long no;
+	private String mainTitle, secondTitle, host,
+		limitingCondition, contents, winnerPrize,
+		startDate, endDate, reception, notice, contact;
+	private String imgPath = "";
+
+	public Long getNo() {
+		return no;
+	}
+
+	public void setNo(Long no) {
+		this.no = no;
+	}
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
 
 	public String getMainTitle() {
 		return mainTitle;
@@ -22,14 +31,6 @@ public class Postings {
 
 	public void setMainTitle(String mainTitle) {
 		this.mainTitle = mainTitle;
-	}
-
-	public Drawable getSecondImage() {
-		return secondImage;
-	}
-
-	public void setSecondImage(Drawable secondImage) {
-		this.secondImage = secondImage;
 	}
 
 	public String getSecondTitle() {
