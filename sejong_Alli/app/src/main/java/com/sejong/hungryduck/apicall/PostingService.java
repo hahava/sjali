@@ -13,7 +13,7 @@ public interface PostingService {
 	@GET("api/posting/{postingId}")
 	Call<Posting> getPosting(@Path("postingId") int postingId);
 
-	@GET("api/postings/")
+	@GET("api/postings")
 	Call<List<Posting>> getPostings(
 		@Query("page") int page,
 		@Query("size") int size
