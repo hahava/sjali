@@ -1,6 +1,6 @@
 package com.sejong.hungryduck.data;
 
-import com.sejong.hungryduck.model.Postings;
+import com.sejong.hungryduck.model.Posting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public class SampleData {
 
 	private static SampleData sampleDatas;
-	private List<Postings> postings;
+	private List<Posting> postings;
 
 	public static SampleData getInstance() {
 		if (sampleDatas == null) {
@@ -17,13 +17,13 @@ public class SampleData {
 		return sampleDatas;
 	}
 
-	public Postings getListItems(int position) {
+	public Posting getListItems(int position) {
 		return postings.get(position);
 	}
 
 	private SampleData() {
 		postings = new ArrayList<>();
-		Postings firstItem = new Postings();
+		Posting firstItem = new Posting();
 		firstItem.setMainTitle("스토리, 세대를 잇다!");
 		firstItem.setSecondTitle("스토리, 세대를 잇다!");
 		firstItem.setEndDate("2016_12_30");
@@ -43,7 +43,7 @@ public class SampleData {
 		firstItem.setContact("공모전 운영사무국 : 02-6395-3127 (평일 09:00 ~ 18:00)");
 		this.postings.add(firstItem);
 
-		Postings secondItem = new Postings();
+		Posting secondItem = new Posting();
 		secondItem.setMainTitle("보안취약점 자동분석 아이디어 공모전");
 		secondItem.setSecondTitle("보안취약점 자동분석 아이디어 공모전");
 		secondItem.setEndDate("2017_01_22");
@@ -71,7 +71,7 @@ public class SampleData {
 			"- 홈페이지 : www.concert.or.kr");
 		this.postings.add(secondItem);
 
-		Postings thirdItem = new Postings();
+		Posting thirdItem = new Posting();
 		thirdItem.setMainTitle("2016 경북 스토리콘텐츠 공모전");
 		thirdItem.setSecondTitle("2016 경북 스토리콘텐츠 공모전");
 		thirdItem.setStartDate("2017_01_10");
@@ -104,7 +104,7 @@ public class SampleData {
 		thirdItem.setContact("영남일보 부설 한국스토리텔링연구원 053)757-5245, 5258");
 		this.postings.add(thirdItem);
 
-		Postings fourthItem = new Postings();
+		Posting fourthItem = new Posting();
 		fourthItem.setMainTitle("제3회 레진코믹스");
 		fourthItem.setSecondTitle("제3회 레진코믹스");
 		fourthItem.setEndDate("2017_02_28");
@@ -122,7 +122,7 @@ public class SampleData {
 		fourthItem.setContact("- E-mail : contest_help@lezhin.com");
 		this.postings.add(fourthItem);
 
-		Postings fifthItem = new Postings();
+		Posting fifthItem = new Posting();
 		fifthItem.setMainTitle("서울백병원 개원 85주년 UCC 공모전");
 		fifthItem.setSecondTitle("서울백병원 개원 85주년 UCC 공모전");
 		fifthItem.setEndDate("2017_03_31");
