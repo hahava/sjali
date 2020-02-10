@@ -1,22 +1,20 @@
 package com.sejong.hungryduck.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.sejong.hungryduck.apicall.PostingService;
-import com.sejong.hungryduck.data.SampleData;
-import com.sejong.hungryduck.model.Postings;
+import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.sejong.R;
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.util.List;
-
-public class PostingsListView extends Activity {
+public class PostingView extends Activity {
 
 	private TextView maintitle;
 	private TextView secondtitle;
@@ -35,21 +33,40 @@ public class PostingsListView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_info);
-		Intent intent = getIntent();
-		setViewBinding(intent.getExtras().getInt("itemNumber"));
-		getPosting();
+		setViewBinding();
+		getPosting(getIntent().getExtras().getInt("itemNumber"));
 	}
 
-	private void getPosting() {
+	private void getPosting(int postingId) {
 		Retrofit retrofit = new Retrofit.Builder()
-			.baseUrl("http//" + R.string.DEV_ADDRESS)
+			.baseUrl(getString(R.string.dev_addr))
+			.addConverterFactory(GsonConverterFactory.create())
 			.build();
 
-		PostingService postingService = retrofit.create(PostingService.class);
+		Call<Posting> postingsCall = retrofit.create(PostingService.class).getPosting(postingId + 1);
+
+		postingsCall.enqueue(new Callback<Posting>() {
+			@Override public void onResponse(Call<Posting> call, Response<Posting> response) {
+				Posting selectedPosting = response.body();
+				maintitle.setText(selectedPosting.getMainTitle());
+				secondtitle.setText(selectedPosting.getSecondTitle());
+				secondhost.setText(selectedPosting.getHost());
+				seconddate.setText(selectedPosting.getEndDate());
+				attend.setText(selectedPosting.getLimitingCondition());
+				contents.setText(selectedPosting.getContents());
+				benefits.setText(selectedPosting.getWinnerPrize());
+				date.setText(selectedPosting.getStartDate());
+				reception.setText(selectedPosting.getReception());
+				notice.setText(selectedPosting.getNotice());
+				contact.setText(selectedPosting.getContact());
+			}
+
+			@Override public void onFailure(Call<Posting> call, Throwable t) {
+			}
+		});
 	}
 
-	private void setViewBinding(int position) {
-		Postings selectedItem = SampleData.getInstance().getListItems(position);
+	private void setViewBinding() {
 		maintitle = (TextView)findViewById(R.id.detailTitle);
 		secondtitle = (TextView)findViewById(R.id.smallTitle);
 		secondhost = (TextView)findViewById(R.id.smallHost);
@@ -64,17 +81,5 @@ public class PostingsListView extends Activity {
 		secondImage = (ImageView)findViewById(R.id.detailImage);
 		kakaobtn = (ImageButton)findViewById(R.id.kakaoButton);
 		facebookbtn = (ImageButton)findViewById(R.id.facebookButton);
-
-		maintitle.setText(selectedItem.getMainTitle());
-		secondtitle.setText(selectedItem.getSecondTitle());
-		secondhost.setText(selectedItem.getHost());
-		seconddate.setText(selectedItem.getEndDate());
-		attend.setText(selectedItem.getLimitingCondition());
-		contents.setText(selectedItem.getContents());
-		benefits.setText(selectedItem.getWinnerPrize());
-		date.setText(selectedItem.getStartDate());
-		reception.setText(selectedItem.getReception());
-		notice.setText(selectedItem.getNotice());
-		contact.setText(selectedItem.getContact());
 	}
 }

@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sejong.hungryduck.data.SampleData;
-import com.sejong.hungryduck.model.Postings;
+import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.sejong.R;
 
 public class ListItemView extends Activity {
@@ -33,7 +33,7 @@ public class ListItemView extends Activity {
 	}
 
 	private void setViewBinding(int position) {
-		Postings selectedItem = SampleData.getInstance().getListItems(position);
+		Posting selectedItem = SampleData.getInstance().getListItems(position);
 		maintitle = (TextView)findViewById(R.id.detailTitle);
 		secondtitle = (TextView)findViewById(R.id.smallTitle);
 		secondhost = (TextView)findViewById(R.id.smallHost);
