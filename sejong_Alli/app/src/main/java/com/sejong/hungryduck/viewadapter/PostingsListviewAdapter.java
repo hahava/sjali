@@ -2,7 +2,6 @@ package com.sejong.hungryduck.viewadapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,23 +12,24 @@ import com.sejong.hungryduck.activity.PostingView;
 import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PostingsListviewAdapter extends BaseAdapter {
 
-	private List<CustomItem> allMenuListData = new ArrayList<>();
+	private List<CustomItem> items = new ArrayList<>();
 	private ViewHolder viewHolder;
 
 	@Override
 	public int getCount() {
-		return allMenuListData.size();
+		return items.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return allMenuListData.get(position);
+		return items.get(position);
 	}
 
 	@Override
@@ -37,43 +37,38 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public void addItem(Drawable thumbnailImage, String title, String regDate) {
-		CustomItem item = new CustomItem();
-		item.setThumbnailImage(thumbnailImage);
-		item.setTitle(title);
-		item.setRegDate(regDate);
-		allMenuListData.add(item);
+	public void addItem(CustomItem customItem) {
+		items.add(customItem);
 	}
 
-	private void viewBindings(View view) {
+	private void viewBindings(View view, CustomItem selectedItem) {
+		Picasso.get()
+			.load(view.getContext().getString(R.string.dev_addr) + "/image/" + selectedItem.getThumbnailImage())
+			.error(R.drawable.board_item_basic_thumbnail)
+			.into((ImageView)view.findViewById(R.id.customImage));
+
 		viewHolder.setThumbnailImageView((ImageView)view.findViewById(R.id.customImage));
 		viewHolder.setTitleView((TextView)view.findViewById(R.id.customTitle));
 		viewHolder.setRegDateView((TextView)view.findViewById(R.id.customDate));
+
+		viewHolder.getTitleView().setText(selectedItem.getTitle());
+		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
 	}
 
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
+		CustomItem selectedItem = items.get(position);
+
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = (LayoutInflater)parent.getContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflater.inflate(R.layout.custom_view, null);
-			viewBindings(convertView);
+			viewBindings(convertView, selectedItem);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder)convertView.getTag();
 		}
-
-		CustomItem selectedItem = allMenuListData.get(position);
-
-		if (selectedItem.getThumbnailImage() != null) {
-			viewHolder.getThumbnailImageView().setVisibility(View.VISIBLE);
-			viewHolder.getThumbnailImageView().setImageDrawable(selectedItem.getThumbnailImage());
-		} else {
-			viewHolder.getThumbnailImageView().setVisibility(View.GONE);
-		}
-		viewHolder.getTitleView().setText(selectedItem.getTitle());
-		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
 
 		convertView.setOnClickListener(v -> {
 			Intent intent = new Intent(parent.getContext(), PostingView.class);
