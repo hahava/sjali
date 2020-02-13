@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import com.sejong.hungryduck.apicall.PostingService;
+import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.sejong.R;
 import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
@@ -58,13 +59,8 @@ public class FirstView extends Fragment {
 		menuList = (ListView)view.findViewById(R.id.outList);
 		listViewAdapter = new PostingsListviewAdapter();
 		menuList.setAdapter(listViewAdapter);
-
 		for (Posting posting : postings) {
-			listViewAdapter.addItem(
-				posting.getImgPath(),
-				posting.getMainTitle(),
-				posting.getEndDate());
+			listViewAdapter.addItem(new CustomItem(posting.getImgPath(), posting.getMainTitle(), posting.getEndDate()));
 		}
-
 	}
 }

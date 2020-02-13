@@ -5,6 +5,12 @@ public class CustomItem {
 	private String title;
 	private String regDate;
 
+	public CustomItem(String thumbnailImage, String title, String regDate) {
+		this.thumbnailImage = thumbnailImage;
+		this.title = title;
+		this.regDate = regDate;
+	}
+
 	public String getThumbnailImage() {
 		return thumbnailImage;
 	}
@@ -12,7 +18,6 @@ public class CustomItem {
 	public void setThumbnailImage(String thumbnailImage) {
 		this.thumbnailImage = thumbnailImage;
 	}
-
 
 	public String getTitle() {
 		return title;

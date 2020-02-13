@@ -19,17 +19,17 @@ import java.util.List;
 
 public class PostingsListviewAdapter extends BaseAdapter {
 
-	private List<CustomItem> allMenuListData = new ArrayList<>();
+	private List<CustomItem> items = new ArrayList<>();
 	private ViewHolder viewHolder;
 
 	@Override
 	public int getCount() {
-		return allMenuListData.size();
+		return items.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return allMenuListData.get(position);
+		return items.get(position);
 	}
 
 	@Override
@@ -37,26 +37,27 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public void addItem(String thumbnailImage, String title, String regDate) {
-		CustomItem item = new CustomItem();
-		item.setThumbnailImage(thumbnailImage);
-		item.setTitle(title);
-		item.setRegDate(regDate);
-		allMenuListData.add(item);
+	public void addItem(CustomItem customItem) {
+		items.add(customItem);
 	}
 
 	private void viewBindings(View view, CustomItem selectedItem) {
 		Picasso.get()
 			.load(view.getContext().getString(R.string.dev_addr) + "/image/" + selectedItem.getThumbnailImage())
+			.error(R.drawable.board_item_basic_thumbnail)
 			.into((ImageView)view.findViewById(R.id.customImage));
+
 		viewHolder.setThumbnailImageView((ImageView)view.findViewById(R.id.customImage));
 		viewHolder.setTitleView((TextView)view.findViewById(R.id.customTitle));
 		viewHolder.setRegDateView((TextView)view.findViewById(R.id.customDate));
+
+		viewHolder.getTitleView().setText(selectedItem.getTitle());
+		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
 	}
 
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
-		CustomItem selectedItem = allMenuListData.get(position);
+		CustomItem selectedItem = items.get(position);
 
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
@@ -68,14 +69,6 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		} else {
 			viewHolder = (ViewHolder)convertView.getTag();
 		}
-
-		if (selectedItem.getThumbnailImage() != null) {
-			viewHolder.getThumbnailImageView().setVisibility(View.VISIBLE);
-		} else {
-			viewHolder.getThumbnailImageView().setVisibility(View.GONE);
-		}
-		viewHolder.getTitleView().setText(selectedItem.getTitle());
-		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
 
 		convertView.setOnClickListener(v -> {
 			Intent intent = new Intent(parent.getContext(), PostingView.class);
