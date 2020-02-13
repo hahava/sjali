@@ -10,6 +10,7 @@ import com.sejong.hungryduck.apicall.PostingService;
 import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.sejong.R;
 import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
+import com.squareup.picasso.Picasso;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,7 +60,8 @@ public class FirstView extends Fragment {
 		menuList.setAdapter(listViewAdapter);
 
 		for (Posting posting : postings) {
-			listViewAdapter.addItem(getResources().getDrawable(R.drawable.board_item_basic_thumbnail, null),
+			listViewAdapter.addItem(
+				posting.getImgPath(),
 				posting.getMainTitle(),
 				posting.getEndDate());
 		}

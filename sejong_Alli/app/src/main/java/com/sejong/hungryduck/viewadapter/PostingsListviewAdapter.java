@@ -2,7 +2,6 @@ package com.sejong.hungryduck.viewadapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import com.sejong.hungryduck.activity.PostingView;
 import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public void addItem(Drawable thumbnailImage, String title, String regDate) {
+	public void addItem(String thumbnailImage, String title, String regDate) {
 		CustomItem item = new CustomItem();
 		item.setThumbnailImage(thumbnailImage);
 		item.setTitle(title);
@@ -45,7 +45,10 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		allMenuListData.add(item);
 	}
 
-	private void viewBindings(View view) {
+	private void viewBindings(View view, CustomItem selectedItem) {
+		Picasso.get()
+			.load(view.getContext().getString(R.string.dev_addr) + "/image/" + selectedItem.getThumbnailImage())
+			.into((ImageView)view.findViewById(R.id.customImage));
 		viewHolder.setThumbnailImageView((ImageView)view.findViewById(R.id.customImage));
 		viewHolder.setTitleView((TextView)view.findViewById(R.id.customTitle));
 		viewHolder.setRegDateView((TextView)view.findViewById(R.id.customDate));
@@ -53,22 +56,21 @@ public class PostingsListviewAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
+		CustomItem selectedItem = allMenuListData.get(position);
+
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = (LayoutInflater)parent.getContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflater.inflate(R.layout.custom_view, null);
-			viewBindings(convertView);
+			viewBindings(convertView, selectedItem);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder)convertView.getTag();
 		}
 
-		CustomItem selectedItem = allMenuListData.get(position);
-
 		if (selectedItem.getThumbnailImage() != null) {
 			viewHolder.getThumbnailImageView().setVisibility(View.VISIBLE);
-			viewHolder.getThumbnailImageView().setImageDrawable(selectedItem.getThumbnailImage());
 		} else {
 			viewHolder.getThumbnailImageView().setVisibility(View.GONE);
 		}

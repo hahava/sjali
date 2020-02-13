@@ -1,19 +1,18 @@
 package com.sejong.hungryduck.model;
 
-import android.graphics.drawable.Drawable;
-
 public class CustomItem {
-	private Drawable thumbnailImage;
+	private String thumbnailImage;
 	private String title;
 	private String regDate;
 
-	public Drawable getThumbnailImage() {
+	public String getThumbnailImage() {
 		return thumbnailImage;
 	}
 
-	public void setThumbnailImage(Drawable thumbnailImage) {
+	public void setThumbnailImage(String thumbnailImage) {
 		this.thumbnailImage = thumbnailImage;
 	}
+
 
 	public String getTitle() {
 		return title;
