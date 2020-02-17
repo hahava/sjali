@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.sejong.hungryduck.apicall.PostingService;
 import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.sejong.R;
+import com.squareup.picasso.Picasso;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,7 +28,7 @@ public class PostingView extends Activity {
 	private TextView reception;
 	private TextView notice;
 	private TextView contact;
-	private ImageView secondImage;
+	private ImageView secondImage, detailImage;
 	private ImageButton kakaobtn, facebookbtn;
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class PostingView extends Activity {
 		postingsCall.enqueue(new Callback<Posting>() {
 			@Override public void onResponse(Call<Posting> call, Response<Posting> response) {
 				Posting selectedPosting = response.body();
+
 				maintitle.setText(selectedPosting.getMainTitle());
 				secondtitle.setText(selectedPosting.getSecondTitle());
 				secondhost.setText(selectedPosting.getHost());
@@ -59,6 +61,11 @@ public class PostingView extends Activity {
 				reception.setText(selectedPosting.getReception());
 				notice.setText(selectedPosting.getNotice());
 				contact.setText(selectedPosting.getContact());
+
+				Picasso.get()
+					.load(getString(R.string.dev_addr) + "/image/" + selectedPosting.getImgPath())
+					.error(R.drawable.board_item_basic_thumbnail)
+					.into(detailImage);
 			}
 
 			@Override public void onFailure(Call<Posting> call, Throwable t) {
@@ -67,6 +74,7 @@ public class PostingView extends Activity {
 	}
 
 	private void setViewBinding() {
+		detailImage = (ImageView)findViewById(R.id.detailImage);
 		maintitle = (TextView)findViewById(R.id.detailTitle);
 		secondtitle = (TextView)findViewById(R.id.smallTitle);
 		secondhost = (TextView)findViewById(R.id.smallHost);
