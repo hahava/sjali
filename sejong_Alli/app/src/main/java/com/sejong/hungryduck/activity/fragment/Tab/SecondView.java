@@ -1,4 +1,4 @@
-package com.sejong.hungryduck.fragment.Tab;
+package com.sejong.hungryduck.activity.fragment.Tab;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -33,7 +33,7 @@ public class PostingView extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.detail_info);
+		setContentView(R.layout.posting_layout);
 		setViewBinding();
 		getPosting(getIntent().getExtras().getInt("itemNumber"));
 	}

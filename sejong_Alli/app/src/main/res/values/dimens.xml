@@ -6,4 +6,7 @@
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="write_view_small_title">9pt</dimen>
     <dimen name="btn_text_size">10pt</dimen>
+    <dimen name="main_title_text_size">25dp</dimen>
+    <dimen name="second_title_text_size">18dp</dimen>
+    <dimen name="component_top_margin">10dp</dimen>
 </resources>

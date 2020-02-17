@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.sejong.hungryduck.activity.PostingView;
-import com.sejong.hungryduck.model.CustomItem;
+import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
 import com.squareup.picasso.Picasso;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class PostingsListviewAdapter extends BaseAdapter {
 
-	private List<CustomItem> items = new ArrayList<>();
+	private List<Posting> items = new ArrayList<>();
 	private ViewHolder viewHolder;
 
 	@Override
@@ -37,45 +37,47 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public void addItem(CustomItem customItem) {
-		items.add(customItem);
+	public void addItem(Posting posting) {
+		items.add(posting);
 	}
 
-	private void viewBindings(View view, CustomItem selectedItem) {
+	private void viewBindings(View view, Posting selectedPosting) {
 		Picasso.get()
-			.load(view.getContext().getString(R.string.dev_addr) + "/image/" + selectedItem.getThumbnailImage())
+			.load(view.getContext().getString(R.string.dev_addr) + "/image/" + selectedPosting.getImgPath())
 			.error(R.drawable.board_item_basic_thumbnail)
 			.into((ImageView)view.findViewById(R.id.customImage));
 
 		viewHolder.setThumbnailImageView((ImageView)view.findViewById(R.id.customImage));
 		viewHolder.setTitleView((TextView)view.findViewById(R.id.customTitle));
 		viewHolder.setRegDateView((TextView)view.findViewById(R.id.customDate));
+		viewHolder.setHostView((TextView)view.findViewById(R.id.host));
 
-		viewHolder.getTitleView().setText(selectedItem.getTitle());
-		viewHolder.getRegDateView().setText(selectedItem.getRegDate());
+		viewHolder.getTitleView().setText(selectedPosting.getMainTitle());
+		viewHolder.getRegDateView().setText(selectedPosting.getEndDate());
+		viewHolder.getHostView().setText(selectedPosting.getHost());
 	}
 
 	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
-		CustomItem selectedItem = items.get(position);
+	public View getView(final int position, View postingListView, ViewGroup parent) {
+		Posting selectedPosting = items.get(position);
 
-		if (convertView == null) {
+		if (postingListView == null) {
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = (LayoutInflater)parent.getContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.custom_view, null);
-			viewBindings(convertView, selectedItem);
-			convertView.setTag(viewHolder);
+			postingListView = inflater.inflate(R.layout.posting_listview_item, null);
+			viewBindings(postingListView, selectedPosting);
+			postingListView.setTag(viewHolder);
 		} else {
-			viewHolder = (ViewHolder)convertView.getTag();
+			viewHolder = (ViewHolder)postingListView.getTag();
 		}
 
-		convertView.setOnClickListener(v -> {
+		postingListView.setOnClickListener(v -> {
 			Intent intent = new Intent(parent.getContext(), PostingView.class);
 			intent.putExtra("itemNumber", position);
 			parent.getContext().startActivity(intent);
 		});
 
-		return convertView;
+		return postingListView;
 	}
 }

@@ -1,10 +1,10 @@
-package com.sejong.hungryduck.fragment;
+package com.sejong.hungryduck.activity.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.sejong.hungryduck.fragment.Tab.FirstView;
-import com.sejong.hungryduck.fragment.Tab.SecondView;
+import com.sejong.hungryduck.activity.fragment.Tab.FirstView;
+import com.sejong.hungryduck.activity.fragment.Tab.SecondView;
 import com.sejong.hungryduck.model.TabMetaInfo;
 
 import java.util.HashMap;
