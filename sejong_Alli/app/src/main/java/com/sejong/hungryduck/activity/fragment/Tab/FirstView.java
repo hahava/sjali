@@ -1,4 +1,4 @@
-package com.sejong.hungryduck.fragment.Tab;
+package com.sejong.hungryduck.activity.fragment.Tab;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,11 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import com.sejong.hungryduck.apicall.PostingService;
-import com.sejong.hungryduck.model.CustomItem;
 import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.sejong.R;
 import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
-import com.squareup.picasso.Picasso;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,7 +58,7 @@ public class FirstView extends Fragment {
 		listViewAdapter = new PostingsListviewAdapter();
 		menuList.setAdapter(listViewAdapter);
 		for (Posting posting : postings) {
-			listViewAdapter.addItem(new CustomItem(posting.getImgPath(), posting.getMainTitle(), posting.getEndDate()));
+			listViewAdapter.addItem(posting);
 		}
 	}
 }

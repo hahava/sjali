@@ -1,11 +1,10 @@
-package com.sejong.hungryduck.fragment;
+package com.sejong.hungryduck.activity.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.sejong.hungryduck.fragment.Tab.FirstView;
-import com.sejong.hungryduck.fragment.Tab.SecondView;
-import com.sejong.hungryduck.fragment.Tab.ThirdView;
+import com.sejong.hungryduck.activity.fragment.Tab.FirstView;
+import com.sejong.hungryduck.activity.fragment.Tab.SecondView;
 import com.sejong.hungryduck.model.TabMetaInfo;
 
 import java.util.HashMap;
@@ -22,8 +21,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	private static Map<Integer, TabMetaInfo> setPageTitle() {
 		Map<Integer, TabMetaInfo> pageTitle = new HashMap<>();
 		pageTitle.put(0, new TabMetaInfo("외부", new FirstView()));
-		pageTitle.put(1, new TabMetaInfo("교내", new SecondView()));
-		pageTitle.put(2, new TabMetaInfo("소모임", new ThirdView()));
+		pageTitle.put(1, new TabMetaInfo("소모임", new SecondView()));
 		return pageTitle;
 	}
 

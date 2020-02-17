@@ -7,6 +7,15 @@ public class ViewHolder {
 	private ImageView thumbnailImageView;
 	private TextView titleView;
 	private TextView regDateView;
+	private TextView hostView;
+
+	public TextView getHostView() {
+		return hostView;
+	}
+
+	public void setHostView(TextView hostView) {
+		this.hostView = hostView;
+	}
 
 	public ImageView getThumbnailImageView() {
 		return thumbnailImageView;

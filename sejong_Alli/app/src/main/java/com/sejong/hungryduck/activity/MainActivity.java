@@ -5,7 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.sejong.hungryduck.fragment.SectionsPagerAdapter;
+import com.sejong.hungryduck.activity.fragment.SectionsPagerAdapter;
 import com.sejong.hungryduck.sejong.R;
 
 public class MainActivity extends AppCompatActivity {

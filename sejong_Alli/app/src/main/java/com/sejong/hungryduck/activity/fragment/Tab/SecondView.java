@@ -1,4 +1,4 @@
-package com.sejong.hungryduck.fragment.Tab;
+package com.sejong.hungryduck.activity.fragment.Tab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.sejong.hungryduck.activity.WriteGroup;
 import com.sejong.hungryduck.sejong.R;
 import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
 
-public class ThirdView extends Fragment {
+public class SecondView extends Fragment {
 
 	private View tabInnerView;
 	private ListView groups;
