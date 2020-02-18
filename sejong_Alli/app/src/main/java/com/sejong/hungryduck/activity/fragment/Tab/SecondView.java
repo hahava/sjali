@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.sejong.hungryduck.activity.WriteGroup;
+import com.sejong.hungryduck.activity.StudyGroupWritingActivity;
 import com.sejong.hungryduck.sejong.R;
 import com.sejong.hungryduck.viewadapter.PostingsListviewAdapter;
 
@@ -21,7 +21,7 @@ public class SecondView extends Fragment {
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		if (tabInnerView == null) {
-			tabInnerView = inflater.inflate(R.layout.group, null);
+			tabInnerView = inflater.inflate(R.layout.activity_studygroup_list, null);
 		}
 
 		groups = (ListView)tabInnerView.findViewById(R.id.groupList);
@@ -30,7 +30,7 @@ public class SecondView extends Fragment {
 
 		groupAddBtn = (FloatingActionButton)tabInnerView.findViewById(R.id.fab);
 		groupAddBtn.setOnClickListener(v -> {
-			Intent intent = new Intent(v.getContext(), WriteGroup.class);
+			Intent intent = new Intent(v.getContext(), StudyGroupWritingActivity.class);
 			startActivity(intent);
 		});
 

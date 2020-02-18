@@ -11,7 +11,7 @@ import com.sejong.hungryduck.sejong.R;
  *
  * @author hahava
  */
-public class Splash extends Activity {
+public class SplashActivity extends Activity {
 
 	//5 seconds
 	private final int DELAYED_SECONDS = 5000;

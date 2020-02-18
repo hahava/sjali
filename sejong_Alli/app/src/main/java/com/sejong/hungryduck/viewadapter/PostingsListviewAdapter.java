@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.sejong.hungryduck.activity.PostingView;
+import com.sejong.hungryduck.activity.PostingActivity;
 import com.sejong.hungryduck.model.Posting;
 import com.sejong.hungryduck.model.ViewHolder;
 import com.sejong.hungryduck.sejong.R;
@@ -65,7 +65,7 @@ public class PostingsListviewAdapter extends BaseAdapter {
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = (LayoutInflater)parent.getContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			postingListView = inflater.inflate(R.layout.posting_listview_item, null);
+			postingListView = inflater.inflate(R.layout.item_posting, null);
 			viewBindings(postingListView, selectedPosting);
 			postingListView.setTag(viewHolder);
 		} else {
@@ -73,7 +73,7 @@ public class PostingsListviewAdapter extends BaseAdapter {
 		}
 
 		postingListView.setOnClickListener(v -> {
-			Intent intent = new Intent(parent.getContext(), PostingView.class);
+			Intent intent = new Intent(parent.getContext(), PostingActivity.class);
 			intent.putExtra("itemNumber", position);
 			parent.getContext().startActivity(intent);
 		});
