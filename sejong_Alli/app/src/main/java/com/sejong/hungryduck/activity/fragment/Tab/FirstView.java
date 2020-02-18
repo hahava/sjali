@@ -25,7 +25,7 @@ public class FirstView extends Fragment {
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		if (view == null) {
-			view = inflater.inflate(R.layout.out_side, null);
+			view = inflater.inflate(R.layout.activity_posting_list, null);
 		}
 
 		getPostings();

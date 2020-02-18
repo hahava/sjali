@@ -15,7 +15,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PostingView extends Activity {
+public class PostingActivity extends Activity {
 
 	private TextView maintitle;
 	private TextView secondtitle;
@@ -33,7 +33,7 @@ public class PostingView extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.posting_layout);
+		setContentView(R.layout.activity_posting_layout);
 		setViewBinding();
 		getPosting(getIntent().getExtras().getInt("itemNumber"));
 	}

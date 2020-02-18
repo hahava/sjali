@@ -16,9 +16,9 @@
                 android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name="com.sejong.hungryduck.activity.PostingView"></activity>
-        <activity android:name="com.sejong.hungryduck.activity.WriteGroup"></activity>
-        <activity android:name="com.sejong.hungryduck.activity.Splash">
+        <activity android:name="com.sejong.hungryduck.activity.PostingActivity"></activity>
+        <activity android:name="com.sejong.hungryduck.activity.StudyGroupWritingActivity"></activity>
+        <activity android:name="com.sejong.hungryduck.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
