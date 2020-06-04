@@ -7,7 +7,7 @@
                 android:padding="10dp"
                 android:background="@color/backgroundColor">
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
