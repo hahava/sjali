@@ -1,10 +1,10 @@
 package com.sejong.hungryduck.activity;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sejong.hungryduck.activity.fragment.SectionsPagerAdapter;
 import com.sejong.hungryduck.sejong.R;
